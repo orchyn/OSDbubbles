@@ -3,7 +3,9 @@
 As you know, Plasma 5.20 ships with redesigned on-screen display (OSD) bubbles:
 
 &nbsp;
-![Alt text](https://imgur.com/32c5OtJ.png?raw=true)
+<p align="center">
+    <img src="https://imgur.com/32c5OtJ.png" alt="banner">
+</p>
 &nbsp;
 
 If you are not happy with these changes, go to  
@@ -20,5 +22,6 @@ and replace *OsdItem.qml* with this one.
 # Preview
 &nbsp;
 
-
-![Alt text](https://imgur.com/uIUfaEt.png?raw=true) ![Alt text](https://imgur.com/2J6jg6A.png?raw=true)
+<p align="center">
+    <img src="https://imgur.com/uIUfaEt.png" alt="light preview"> <img src="https://imgur.com/2J6jg6A.png" alt="dark preview">
+</p>
