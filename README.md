@@ -28,5 +28,5 @@ and replace *OsdItem.qml* with this one.
 
 &nbsp;
 <p align="center">
-    <img src="https://imgur.com/0lUI3r3.png" alt="light preview">
+    <img src="https://imgur.com/MKCz2AN.png" alt="light preview">
 </p>
