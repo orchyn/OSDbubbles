@@ -25,16 +25,29 @@ import QtQuick.Window 2.2
 
 Item {
     property QtObject rootItem
+    // OSD Timeout in msecs - how long it will stay on the screen
+    property int timeout: 1800
+    // This is either a text or a number, if showingProgress is set to true,
+    // the number will be used as a value for the progress bar
+    property var osdValue
+    // Maximum percent value
+    property int osdMaxValue: 100
+    // Icon name to display
+    property string icon
+    // Set to true if the value is meant for progress bar,
+    // false for displaying the value as normal text
+    property bool showingProgress: false
+
 
     height: Math.min(units.gridUnit * 15, Screen.desktopAvailableHeight / 5)
     width: height
 
     PlasmaCore.IconItem {
-        id: icon
         height: parent.height - Math.max(progressBar.height, label.height)
                               - ((units.smallSpacing/2) * 3) //it's an svg
         width: parent.width
-        source: rootItem.icon
+        source: icon
+        visible: valid
     }
 
     PlasmaComponents3.ProgressBar {
@@ -46,10 +59,10 @@ Item {
             margins: Math.floor(units.smallSpacing / 2) * 5
          }
         Layout.fillWidth: true
-        visible: rootItem.showingProgress
+        visible: showingProgress
         from: 0
-        to: rootItem.osdMaxValue
-        value: Number(rootItem.osdValue)
+        to: osdMaxValue
+        value: Number(osdValue)
     }
 
     PlasmaExtra.Heading {
@@ -67,7 +80,7 @@ Item {
         textFormat: Text.PlainText
         wrapMode: Text.NoWrap
         elide: Text.ElideRight
-        text: !rootItem.showingProgress && rootItem.osdValue ? rootItem.osdValue : ""
-        visible: !rootItem.showingProgress
+        text: !showingProgress && osdValue ? osdValue : ""
+        visible: !showingProgress
     }
 }
